@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-cudnn7-devel
+FROM nvidia/cuda:9.0-cudnn7-devel
 
 LABEL maintainer="frt frt@hongo.wide.ad.jp"
 
@@ -28,9 +28,8 @@ RUN rm -rf ~/.pyenv
 ENV PATH $PATH:$PYTHON_ROOT/bin
 
 RUN pip install --upgrade setuptools pip
-RUN pip install numpy tensorflow-gpu==2.0.0 keras torch torchvision
-
-RUN pip install opencv-python seaborn matplotlib tqdm jupyter pandas xlrd xgboost sklearn pyarrow
+RUN pip install numpy tensorflow-gpu==2.0.0 keras
+RUN pip install opencv-python seaborn matplotlib tqdm jupyter pandas xgboost sklearn pyarrow
 
 RUN mkdir /root/.jupyter && touch /root/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /root/.jupyter/jupyter_notebook_config.py
