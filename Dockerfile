@@ -28,8 +28,10 @@ RUN rm -rf ~/.pyenv
 ENV PATH $PATH:$PYTHON_ROOT/bin
 
 RUN pip install --upgrade setuptools pip
-RUN pip install numpy tensorflow-gpu==2.0.0 tensorflow_hub
+RUN pip install numpy tensorflow-gpu==2.0.0 tensorflow_hub keras
 RUN pip install scikit-image opencv-python seaborn matplotlib tqdm jupyter pandas xgboost sklearn pyarrow
+
+RUN pip install -U git+https://github.com/qubvel/efficientnet
 
 RUN mkdir /root/.jupyter && touch /root/.jupyter/jupyter_notebook_config.py
 RUN echo "c.NotebookApp.ip = '0.0.0.0'" >> /root/.jupyter/jupyter_notebook_config.py
