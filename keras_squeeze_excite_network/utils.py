@@ -98,4 +98,4 @@ def _obtain_input_shape(input_shape,
 
 
 def _tensor_shape(tensor):
-    return getattr(tensor, '_shape_val') if TF else getattr(tensor, '_keras_shape')
+    return getattr(tensor, '_keras_shape')
