@@ -6,3 +6,7 @@ data/
 \.ipynb_checkpoints/
 \.python-version
 bengaliai-cv19.zip
+images/
+records/
+logs/
+__pycache__/
